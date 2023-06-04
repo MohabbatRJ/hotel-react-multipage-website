@@ -1,0 +1,163 @@
+.gallery {
+    margin-bottom: 50px;
+    /* box-sizing: border-box; */
+    /* overflow: hidden; */
+}
+
+.gallery img {
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery .items {
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.gallery h3 {
+    margin: 10px 0 10px 0;
+    font-weight: 400;
+}
+
+.gallery .img {
+    position: relative;
+    overflow: hidden;
+    /* max-width: 380px; */
+    height: 252px;
+}
+
+.gallery .fa-image, .gallery .fa-external-link-alt {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 5;
+    font-size: 40px;
+    color: white;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.gallery .img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+/* .gallery .img::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 305px;
+    height: 222px;
+    z-index: 3;
+    border: 1px solid #31b675;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+} */
+
+.gallery .items:hover img {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.gallery .items:hover .fa-image,
+.gallery .items:hover .fa-external-link-alt,
+.gallery .items:hover .img::after,
+.gallery .items:hover .img::before {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.popup {
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 8;
+}
+
+
+.hide {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popupContent {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+}
+
+.popup button {
+    background-color: #fff;
+    padding: 10px 10px;
+    color: #000;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+    .gallery .container {
+        max-width: 100%;
+    }
+
+    .gallery .img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .gallery .img::after {
+        /* width: 300px; */
+        /* height: 180px; */
+    }
+
+    .popupContent {
+        padding: 50px;
+        position: absolute;
+        top: 30%;
+        left: 0%;
+    }
+
+    .popup button {
+        background-color: #fff;
+        padding: 10px 10px;
+        color: #000;
+        position: absolute;
+        top: -2%;
+        right: 6.5%;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width:520px) {
+    .gallery .items {
+        padding: 0;
+        margin: 15px;
+    }
+
+    .gallery .img{
+        max-width: 100%;
+    }
+}

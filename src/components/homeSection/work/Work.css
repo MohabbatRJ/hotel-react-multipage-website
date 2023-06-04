@@ -1,0 +1,35 @@
+.work {
+    text-align: center;
+}
+
+.work img {
+    width: auto;
+    height: auto;
+}
+
+.work .box {
+    padding: 40px 20px;
+
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+}
+
+.work h2 {
+    font-weight: 500;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.work p {
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+    .work .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .work .box {
+        margin-bottom: 1rem;
+    }
+}
